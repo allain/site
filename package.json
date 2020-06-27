@@ -3,23 +3,18 @@
   "version": "11.3.2",
   "description": "Static file serving and directory listing",
   "scripts": {
+    "build": "tailwindcss build ./src/style.css -o ./public/style.css",
+    "dev": "node ./bin/serve ./public/",
     "test": "yarn lint",
     "lint": "zeit-eslint --ext .jsx,.js .",
     "lint-staged": "git diff --diff-filter=ACMRT --cached --name-only '*.js' '*.jsx' | xargs zeit-eslint"
   },
-  "files": [
-    "bin"
-  ],
+  "files": ["bin"],
   "repository": "zeit/serve",
   "bin": {
     "serve": "./bin/serve.js"
   },
-  "keywords": [
-    "now",
-    "serve",
-    "micro",
-    "http-server"
-  ],
+  "keywords": ["now", "serve", "micro", "http-server"],
   "author": "leo",
   "license": "MIT",
   "devDependencies": {
@@ -28,9 +23,7 @@
     "eslint": "5.4.0"
   },
   "eslintConfig": {
-    "extends": [
-      "@zeit/eslint-config-node"
-    ]
+    "extends": ["@zeit/eslint-config-node"]
   },
   "git": {
     "pre-commit": "lint-staged"
@@ -44,6 +37,7 @@
     "clipboardy": "1.2.3",
     "compression": "1.7.3",
     "serve-handler": "6.1.3",
+    "tailwindcss": "^1.4.6",
     "update-check": "1.5.2"
   }
 }
